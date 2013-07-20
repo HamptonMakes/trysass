@@ -1,11 +1,14 @@
 // Place all the styles related to the main controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-$gray: #777;
 
 body {
   font-family: "Roboto";
-  border-top: 5px solid $gray;
+  border-top: 5px solid #DC4E00;
+  background: #F4F5ED;
+}
+.CodeMirror {
+  background: #333 !important;
 }
 
 h1,h2,h3,h4,h5,h6 {
@@ -36,8 +39,8 @@ ul.learn_more {
   margin: 10px 0 20px;
 }
 footer {
-  background: $gray;
-  color: #FFF;
+  background: lighten(#929487, 20%);
+  color: #fff;
   padding: 20px;
   text-align: center;
   a {
