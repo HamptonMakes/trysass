@@ -1,7 +1,10 @@
 class MainController < ApplicationController
   def index
   end
-
+  
+  def about
+  end
+  
   def compile
   	engine = Sass::Engine.new(params[:template],
   							  :load_paths => [],
