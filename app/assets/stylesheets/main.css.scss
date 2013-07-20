@@ -10,7 +10,28 @@ h1,h2,h3,h4,h5,h6 {
   font-family: "Roboto";
   font-weight: 700;
 }
+ul {
+  li {
 
+  }
+}
 footer {
-  background: blue;
+  background: #777;
+  color: #FFF;
+  padding: 20px;
+  text-align: center;
+  a {
+    color: #FFF;
+    &:hover {
+      color: #FFF;
+      opacity: 0.7;
+    }
+  }
+  .links {
+    margin-bottom: 10px;
+  }
+  .separator {
+    display: inline-block;
+    margin: 0 5px;
+  }
 }

@@ -23,7 +23,35 @@
   = csrf_meta_tag
 
 %body
+  %nav.top-bar.hide-for-small
+    %ul.title-area
+      %li.name
+        %h1
+          = link_to "Sass Compiler", "/"
+      %li.toggle-topbar.menu-icon  = link_to "Menu", "#"
+
+      
+    %section.top-bar-section
+      %ul.right
+        %li.divider
+        %li
+          = link_to "About", "/about"
+        %li.divider
 
   = yield
 
   = javascript_include_tag "application"
+
+  %footer
+    .links
+      = link_to "About", "/about"
+      .separator
+        |
+      = link_to "Sass Site", "http://sass-lang.org"
+    .copyright
+      © 2013
+      = link_to "Hampton Catlin", "http://twitter.com/hcatin" 
+      & 
+      = link_to "Michael Lintorn Catlin", "http://twitter.com/malrase" 
+
+
