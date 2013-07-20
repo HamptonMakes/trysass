@@ -11,6 +11,7 @@ gem 'sass-rails', '~> 4.0.0'
 gem 'haml-rails'
 gem 'compass-rails' # you need this or you get an err
 gem 'zurb-foundation', '~> 4.0.0'
+gem 'codemirror-rails'
 
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'

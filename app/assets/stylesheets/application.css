@@ -12,3 +12,5 @@
  *= require_tree .
  */
  *= require foundation_and_overrides
+//= require codemirror
+//= require codemirror/themes/night

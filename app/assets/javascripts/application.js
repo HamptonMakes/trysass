@@ -15,5 +15,7 @@
 //= require foundation
 //= require turbolinks
 //= require_tree .
+//= require codemirror
+//= require codemirror/modes/ruby
 
 $(document).foundation();

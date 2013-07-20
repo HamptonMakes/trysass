@@ -6,12 +6,12 @@ class MainController < ApplicationController
   end
   
   def compile
-  	engine = Sass::Engine.new(params[:template],
+  	engine = Sass::Engine.new(params[:input] || "",
   							  :load_paths => [],
   							  :filesystem_importer => Sass::Importers::Base)
  	css = engine.render
  	render :json => {
- 		:result => engine.css
+ 		:result => css
  	}
   end
 end
