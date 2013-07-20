@@ -14,8 +14,13 @@
 //= require jquery_ujs
 //= require foundation
 //= require turbolinks
-//= require_tree .
 //= require codemirror
-//= require codemirror/modes/ruby
+//= require_tree .
+
 
 $(document).foundation();
+
+$(function() {
+	CodeMirror.fromTextArea($("textarea.scss")[0], {mode: "text/x-scss", theme: "night"});
+	CodeMirror.fromTextArea($("textarea.css")[0], {mode: "css", theme: "night"});
+})
