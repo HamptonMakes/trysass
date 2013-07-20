@@ -20,7 +20,26 @@
 
 $(document).foundation();
 
+var sassMirror;
+var cssMirror;
+
 $(function() {
-	CodeMirror.fromTextArea($("textarea.scss")[0], {mode: "text/x-scss", theme: "twilight"});
-	CodeMirror.fromTextArea($("textarea.css")[0], {mode: "css", theme: "twilight", readOnly: true});
+	sassMirror = CodeMirror.fromTextArea($("textarea.scss")[0], {
+					mode: "text/x-scss", 
+					theme: "twilight", 
+					autofocus: true,
+				    onKeyEvent: function(mirror, event) {
+				    	mirror.save()
+				    	$.ajax("/compile", {
+				    		data: {
+				    			input: $("textarea.scss")[0].value
+				    		},
+				    		dataType: "json",
+				    		success: function(data, textStatus, bs) {
+				    			cssMirror.setValue(data.result)
+				    		}
+
+				    	})
+				    }});
+	cssMirror = CodeMirror.fromTextArea($("textarea.css")[0], {mode: "css", theme: "twilight", readOnly: true});
 })

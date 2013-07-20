@@ -6,12 +6,21 @@ class MainController < ApplicationController
   end
   
   def compile
-  	engine = Sass::Engine.new(params[:input] || "",
-  							  :load_paths => [],
-  							  :filesystem_importer => Sass::Importers::Base)
- 	css = engine.render
- 	render :json => {
- 		:result => css
- 	}
+  	begin
+	  	engine = Sass::Engine.new(params[:input] || "",
+	  							  :load_paths => [],
+	  							  :syntax => :scss,
+	  							  :filesystem_importer => Sass::Importers::Base)
+	 	css = engine.render
+	 	render :json => {
+	 		:result => css,
+	 		:status => "success"
+	 	}
+	rescue Sass::SyntaxError => e
+		render :json => {
+			:result => e.to_s,
+			:status => "error"
+		}
+	end
   end
 end
