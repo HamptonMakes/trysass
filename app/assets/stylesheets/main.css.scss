@@ -12,6 +12,15 @@ h1,h2,h3,h4,h5,h6 {
   font-family: "Roboto";
   font-weight: 700;
 }
+h1 {
+  font-size: 1.5em;
+}
+h2 {
+  font-size: 1.3em;
+}
+h3 {
+  font-size: 1.1em;
+}
 .top-bar {
   margin-bottom: 0;
 }
@@ -21,6 +30,10 @@ h1,h2,h3,h4,h5,h6 {
 ul.learn_more {
   margin-left: 40px;
   list-style: none;
+}
+.back_btn {
+  display: inline-block;
+  margin: 10px 0;
 }
 footer {
   background: $gray;
