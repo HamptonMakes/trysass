@@ -23,21 +23,12 @@
   = csrf_meta_tag
 
 %body
-  %nav.top-bar.hide-for-small
+  %nav.top-bar
     %ul.title-area
       %li.name
         %h1
           = link_to "Sass Compiler", "/"
       %li.toggle-topbar.menu-icon  = link_to "Menu", "#"
-
-      
-    %section.top-bar-section
-      %ul.right
-        %li.divider
-        %li
-          = link_to "About", "/about"
-        %li.divider
- 
   .content
     = yield
 
