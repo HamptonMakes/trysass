@@ -10,7 +10,7 @@
  *
  *= require_self
  *= require_tree .
+ *= require codemirror
+ *= require codemirror/themes/night
  */
  *= require foundation_and_overrides
-//= require codemirror
-//= require codemirror/themes/night
