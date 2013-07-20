@@ -22,5 +22,5 @@ $(document).foundation();
 
 $(function() {
 	CodeMirror.fromTextArea($("textarea.scss")[0], {mode: "text/x-scss", theme: "night"});
-	CodeMirror.fromTextArea($("textarea.css")[0], {mode: "css", theme: "night"});
+	CodeMirror.fromTextArea($("textarea.css")[0], {mode: "css", theme: "night", readOnly: true});
 })
