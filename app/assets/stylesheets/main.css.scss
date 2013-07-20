@@ -1,14 +1,25 @@
 // Place all the styles related to the main controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+$gray: #777;
 
 body {
   font-family: "Roboto";
+  border-top: 5px solid $gray;
 }
 
 h1,h2,h3,h4,h5,h6 {
   font-family: "Roboto";
   font-weight: 700;
+}
+h1 {
+  font-size: 1.5em;
+}
+h2 {
+  font-size: 1.3em;
+}
+h3 {
+  font-size: 1.1em;
 }
 .top-bar {
   margin-bottom: 0;
@@ -16,9 +27,16 @@ h1,h2,h3,h4,h5,h6 {
 .content {
   padding: 0 20px;
 }
-
+ul.learn_more {
+  margin-left: 40px;
+  list-style: none;
+}
+.back_btn {
+  display: inline-block;
+  margin: 10px 0;
+}
 footer {
-  background: #777;
+  background: $gray;
   color: #FFF;
   padding: 20px;
   text-align: center;

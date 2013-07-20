@@ -23,12 +23,12 @@
   = csrf_meta_tag
 
 %body
-  %nav.top-bar
-    %ul.title-area
-      %li.name
-        %h1
-          = link_to "Sass Compiler", "/"
-      %li.toggle-topbar.menu-icon  = link_to "Menu", "#"
+  / %nav.top-bar
+  /   %ul.title-area
+  /     %li.name
+  /       %h1
+  /         = link_to "Try Sass", "/"
+  /     %li.toggle-topbar.menu-icon  = link_to "Menu", "#"
   .content
     = yield
 
@@ -39,11 +39,11 @@
       = link_to "About", "/about"
       .separator
         |
-      = link_to "Sass Site", "http://sass-lang.org"
+      = link_to "Sass Site", "http://sass-lang.com", :target => "_blank"
     .copyright
       © 2013
-      = link_to "Hampton Catlin", "http://twitter.com/hcatin" 
+      = link_to "Hampton Catlin", "http://twitter.com/hcatlin", :target => "_blank" 
       & 
-      = link_to "Michael Lintorn Catlin", "http://twitter.com/malrase" 
+      = link_to "Michael Lintorn Catlin", "http://twitter.com/malrase", :target => "_blank"
 
 
