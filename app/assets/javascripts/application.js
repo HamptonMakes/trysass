@@ -22,6 +22,20 @@ $(document).foundation();
 
 var sassMirror;
 var cssMirror;
+var compileTimer;
+
+var compileSass = function() {
+	$.ajax("/compile", {
+		data: {
+			input: $("textarea.scss")[0].value
+		},
+		dataType: "json",
+		success: function(data, textStatus, bs) {
+			cssMirror.setValue(data.result)
+		}
+
+	})
+}
 
 $(function() {
 	sassMirror = CodeMirror.fromTextArea($("textarea.scss")[0], {
@@ -30,16 +44,8 @@ $(function() {
 					autofocus: true,
 				    onKeyEvent: function(mirror, event) {
 				    	mirror.save()
-				    	$.ajax("/compile", {
-				    		data: {
-				    			input: $("textarea.scss")[0].value
-				    		},
-				    		dataType: "json",
-				    		success: function(data, textStatus, bs) {
-				    			cssMirror.setValue(data.result)
-				    		}
-
-				    	})
+				    	clearTimeout(compileTimer);
+				    	compileTimer = setTimeout(compileSass, 500)
 				    }});
 	cssMirror = CodeMirror.fromTextArea($("textarea.css")[0], {mode: "css", theme: "twilight", readOnly: true});
 })
