@@ -5,6 +5,10 @@
     .area
       %textarea.scss
         \// Type Sass here
+      %input#format_scss(type="radio" name="syntax" value="scss" checked="checked")
+      %label.label(for="format_scss") SCSS
+      %input#format_sass(type="radio" name="syntax" value="sass")
+      %label.label(for="format_sass") Sass
   %li.output
     .label
       CSS

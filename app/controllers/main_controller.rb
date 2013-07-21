@@ -9,7 +9,7 @@ class MainController < ApplicationController
   	begin
 	  	engine = Sass::Engine.new(params[:input] || "",
 	  							  :load_paths => [],
-	  							  :syntax => :scss,
+	  							  :syntax => params[:syntax].to_sym || :scss,
 	  							  :filesystem_importer => Sass::Importers::Base)
 	 	css = engine.render
 	 	render :json => {

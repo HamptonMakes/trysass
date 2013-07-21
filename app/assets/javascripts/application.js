@@ -27,7 +27,8 @@ var compileTimer;
 var compileSass = function() {
 	$.ajax("/compile", {
 		data: {
-			input: $("textarea.scss")[0].value
+			input: $("textarea.scss")[0].value,
+			syntax: $("input:checked")[0].value
 		},
 		dataType: "json",
 		success: function(data, textStatus, bs) {
@@ -35,6 +36,11 @@ var compileSass = function() {
 		}
 
 	})
+}
+
+var switchSassStyle = function(event) {
+	sassMirror.setOption("mode", "text/x-" + this.value)
+	sassMirror.options.onKeyEvent(sassMirror, event)
 }
 
 $(function() {
@@ -47,5 +53,8 @@ $(function() {
 				    	clearTimeout(compileTimer);
 				    	compileTimer = setTimeout(compileSass, 500)
 				    }});
+
 	cssMirror = CodeMirror.fromTextArea($("textarea.css")[0], {mode: "css", theme: "twilight", readOnly: true});
-})
+
+	$("input[type='radio']").change(switchSassStyle);
+});
